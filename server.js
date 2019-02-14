@@ -1,9 +1,6 @@
-const express = require('express');
-const path = require('path');
-const app = express();
+var server = require('http').createServer(function (req, res) {
+  res.writeHead(200);
+  //res.end('Farewell Nodejitsu. Hello Modulus!');
+});
 
-app.use(express.static(__dirname + '/dist/'));
-app.use('/src/assets', express.static(__dirname + '/src/assets/'));
-
-
-app.listen(process.env.PORT || 8080);
+server.listen(process.env.PORT || 8888);
